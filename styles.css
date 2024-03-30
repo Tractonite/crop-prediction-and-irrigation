@@ -1,0 +1,11 @@
+.text-container {
+    border: 1px solid #ccc;
+    /* Add border to the container */
+    padding: 10px;
+    /* Add padding for spacing */
+}
+
+.bordered-text {
+    margin: 0;
+    /* Reset margin for the text */
+}
