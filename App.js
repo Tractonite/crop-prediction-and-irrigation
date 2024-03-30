@@ -37,6 +37,9 @@ function App() {
   //   cal1();
   // }, []);
 
+
+  // COmment by me
+
   const apiCall = () => {
     fetch("https://flask-web-app-as4r.onrender.com/prediction", {
       method: "POST",
