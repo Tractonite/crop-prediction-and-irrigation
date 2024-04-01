@@ -9,9 +9,10 @@ import React from "react";
 
 export default function NextButton({
   style,
-  width = 200,
+  width = 250,
   height = 75,
   fontSize = 25,
+  title,
   center = true,
   backgroundColor = "#F1F2EC",
   onPress,
@@ -22,8 +23,9 @@ export default function NextButton({
       height,
       borderRadius: 16,
       backgroundColor,
+      marginTop:50,
       alignItems: "center",
-      justifyContent: "space-around",
+      justifyContent: "center",
       alignSelf: center ? "center" : "auto",
       elevation: 5,
       ...style,
@@ -35,9 +37,7 @@ export default function NextButton({
       style={styles.btnStyle}
       onPress={(e) => onPress(e)}
     >
-      <View>
-        <Text style={{ fontSize, fontWeight: 500 }}>Next</Text>
-      </View>
+        <Text style={{ fontSize, fontWeight: 500 }}>{title}</Text>
     </TouchableOpacity>
   );
 }

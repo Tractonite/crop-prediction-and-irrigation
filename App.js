@@ -37,116 +37,8 @@ function App() {
   //   cal1();
   // }, []);
 
-
-  // COmment by me
-
-  const apiCall = () => {
-    fetch("https://flask-web-app-as4r.onrender.com/prediction", {
-      method: "POST",
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        'n': n,
-        'p': p,
-        'k': k,
-        'temp': temp,
-        'hum': hum,
-        'ph': ph
-      }),
-    })
-      .then(res => res.text())
-      .then(data => {
-        console.log(data);
-        setData(data);
-      })
-      .catch(error => {
-        console.log('There has been a problem with your fetch operation: ' + error.message);
-        throw error;
-      });
-  };
-
-  const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      alignItems: 'center',
-      justifyContent: 'center',
-      backgroundColor: '#F5FCFF',
-    },
-    background: {
-      flex: 1,
-      width: '100%',
-      justifyContent: 'center',
-      alignItems: 'center',
-    },
-    input: {
-      backgroundColor: 'rgba(255, 255, 255, 0.8)',
-      padding: 10,
-      borderRadius: 8,
-      marginBottom: 10,// Adjusted color for better visibility
-    },
-    box: {
-      backgroundColor: 'rgba(255, 255, 255, 0.8)',
-      padding: 10,
-      borderRadius: 8,
-      marginBottom: 10,
-    },
-    button: {
-      marginVertical: 10,
-      backgroundColor: '#0C7641',
-      padding: 10,
-      borderRadius: 8,
-    },
-    buttonText: {
-      color: 'white',
-      fontSize: 18,
-      fontWeight: 'bold',
-    },
-    text: {
-      fontSize: 20,
-      marginBottom: 10,
-      textAlign: 'center',
-      color: '#333',
-    },
-  });
-
   return (
-    //<UserData.Provider value={{ option, setOption }}>
-    // <SafeAreaView style={styles.container}>
-    //   <ImageBackground source={require('./background.jpg')} style={styles.background}>
-    //     <Text style={{ fontSize: 50, color: '#0C7641', marginBottom: 20, fontWeight: 'bold', fontStyle: 'italic', textDecorationLine: 'underline' }}>Crop Prediction</Text>
-    //     <Text style={styles.text}>Enter the input</Text>
-    //     <TextInput
-    //       onChangeText={setN}
-    //       style={styles.input}
-    //       placeholder='Input N value'
-    //     />
-    //     <TextInput
-    //       onChangeText={setP}
-    //       style={styles.input}
-    //       placeholder='Input P value'
-    //     />
-    //     <TextInput
-    //       onChangeText={setK}
-    //       style={styles.input}
-    //       placeholder='Input K value'
-    //     />
-    //     <View style={styles.box}>
-    //       <Text>Temperature: {temp}</Text>
-    //     </View>
-    //     <View style={styles.box}>
-    //       <Text>Humidity: {hum}</Text>
-    //     </View>
-    //     <TextInput
-    //       onChangeText={setPH}
-    //       style={styles.input}
-    //       placeholder='Input pH value'
-    //     />
-    //     <Button title='Detect Crop' onPress={apiCall} color="#0C7641"></Button>
-    //     <Text style={{ ...styles.text, color: 'white' }}>{crop}</Text>
-    //   </ImageBackground>
-    // </SafeAreaView>
+
     <UserData.Provider value={{ option, setOption, crop, n, p, k, temp, hum, ph, setData, setP, setK, setN, setTemp, setHum, setPH }}>
       <NavigationContainer>
         <Stack.Navigator>
@@ -166,7 +58,7 @@ function App() {
           />
           <Stack.Screen
             name="FertilizerPredictions"
-            component={CropPrediction}
+            component={FertilizerPrediction}
             options={{
               headerShown: false,
             }}
