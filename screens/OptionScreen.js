@@ -23,24 +23,25 @@ export default function OptionScreen({ navigation }) {
             <Text>Hi</Text>
             <View style={styles.buttonWrapper}>
                 <NextButton
-                    width={150}
-                    height={60}
+
+                    title={'Crop Prediction'}
                     onPress={() => {
                         navigation.navigate("CropPredictions");
                     }}
-                /></View>
-            <NextButton
-                width={150}
-                height={60}
-                onPress={() => {
-                    navigation.navigate("FertilizerPredictions");
-                }}
-            />
+                />
+                <NextButton
+
+                    title={'Fertilizer Prediction'}
+                    onPress={() => {
+                        navigation.navigate("FertilizerPredictions");
+                    }}
+                />
+            </View>
         </SafeAreaView>
     );
 }
 const styles = {
     buttonWrapper: {
-        marginTop: 10,
+        marginTop: 100,
     },
 };
