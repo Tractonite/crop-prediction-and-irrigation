@@ -18,6 +18,12 @@ const ferti_pre = {
   name: "Fertilizer",
   image: require("../assets/images/ferti.png"),
 };
+
+const smart_irri = {
+  id: 3,
+  name: "Smart Irrigation",
+  image: require("../assets/images/smart_irrigation.png"),
+}
 export default function NextButton({
   style,
   width = 250,
@@ -62,8 +68,16 @@ export default function NextButton({
       style={styles.btnStyle}
       onPress={(e) => onPress(e)}
     >
-      <Image source={test == 1 ? crop_pre.image : ferti_pre.image} style={styles.buttonImageIconStyle} />
-      <Text style={{ color: textColor,fontSize, fontWeight: boldNumber }}>{title}</Text>
+      <Image
+        source={
+          test === 1 ? crop_pre.image :
+            test === 2 ? ferti_pre.image :
+              test === 3 ? smart_irri.image :
+                defaultImage
+        }
+        style={styles.buttonImageIconStyle}
+      />      
+      <Text style={{ color: textColor, fontSize, fontWeight: boldNumber }}>{title}</Text>
     </TouchableOpacity>
   );
 }

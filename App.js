@@ -8,6 +8,7 @@ import CropPrediction from './screens/CropPrediction.js'
 import FertilizerPrediction from './screens/FertilizerPrediction.js'
 import OptionScreen from './screens/OptionScreen.js';
 import NextButton from './components/NextButton.js';
+import SmartIrrigation from './screens/SmartIrrigation.js';
 const Stack = createNativeStackNavigator();
 function App() {
   const [crop, setData] = useState("Input values and press on Detect Crop to predict the crop");
@@ -59,6 +60,13 @@ function App() {
           <Stack.Screen
             name="FertilizerPredictions"
             component={FertilizerPrediction}
+            options={{
+              headerShown: false,
+            }}
+          />
+          <Stack.Screen
+            name="SmartIrrigation"
+            component={SmartIrrigation}
             options={{
               headerShown: false,
             }}

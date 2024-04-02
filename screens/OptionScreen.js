@@ -26,6 +26,13 @@ export default function OptionScreen({ navigation }) {
                         navigation.navigate("FertilizerPredictions");
                     }}
                 />
+                <NextButton
+                    title={'Smart Irrigation'}
+                    test={3}
+                    onPress={() => {
+                        navigation.navigate("SmartIrrigation");
+                    }}
+                />
             </View>
         </SafeAreaView>
     );
