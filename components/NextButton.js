@@ -24,6 +24,8 @@ export default function NextButton({
   height = 75,
   fontSize = 25,
   title,
+  textColor,
+  boldNumber,
   test,
   center = true,
   backgroundColor = "#F1F2EC",
@@ -49,6 +51,10 @@ export default function NextButton({
       width: 25,
       resizeMode: 'stretch',
     },
+    textStyle: {
+      fontSize,
+      color: textColor, // Set text color
+    },
   });
   return (
     <TouchableOpacity
@@ -57,7 +63,7 @@ export default function NextButton({
       onPress={(e) => onPress(e)}
     >
       <Image source={test == 1 ? crop_pre.image : ferti_pre.image} style={styles.buttonImageIconStyle} />
-      <Text style={{ fontSize, fontWeight: 500 }}>{title}</Text>
+      <Text style={{ color: textColor,fontSize, fontWeight: boldNumber }}>{title}</Text>
     </TouchableOpacity>
   );
 }

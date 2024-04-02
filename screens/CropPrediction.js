@@ -126,10 +126,10 @@ export default function CropPrediction() {
         //<ImageBackground source={require('../background.jpg')} style={styles.background}>
         <View style={styles.outerbox}>
             <View style={styles.midbox}>
-                <Text style={{ fontSize: 50, color: '#b5ffcb', fontWeight: 'bold' , marginBottom: 20 }}>Crop Prediction</Text>
+                <Text style={{ fontSize: 50, color: 'white', fontWeight: 'bold', marginBottom: 20 }}>Crop Prediction</Text>
                 <Text style={styles.text}>Enter the input</Text>
                 <View style={styles.innerbox}>
-                    <Text style={styles.text}>N:{}{"\t\t\t"+n}</Text>
+                    <Text style={styles.text}>N:{ }{"\t\t\t" + n}</Text>
                     <TextInput
                         onChangeText={setN}
                         style={styles.input}
@@ -137,7 +137,7 @@ export default function CropPrediction() {
                     />
                 </View>
                 <View style={styles.innerbox}>
-                    <Text style={styles.text}>P: {"\t\t\t"+p}</Text>
+                    <Text style={styles.text}>P: {"\t\t\t" + p}</Text>
                     <TextInput
                         onChangeText={setP}
                         style={styles.input}
@@ -145,7 +145,7 @@ export default function CropPrediction() {
                     />
                 </View>
                 <View style={styles.innerbox}>
-                    <Text style={styles.text}>K: {"\t\t\t"+k}</Text>
+                    <Text style={styles.text}>K: {"\t\t\t" + k}</Text>
                     <TextInput
                         onChangeText={setK}
                         style={styles.input}
@@ -153,22 +153,23 @@ export default function CropPrediction() {
                     />
                 </View>
                 <View style={styles.innerbox}>
-                    <Text style={styles.text}>ph: {"\t"+ph}</Text>
+                    <Text style={styles.text}>ph: {"\t" + ph}</Text>
                     <TextInput
                         onChangeText={setPH}
                         style={styles.input}
                         placeholder='pH value'
                     />
                 </View>
-                <Text style={styles.text}>Temperature: {"\t\t\t"+temp}</Text>
-                <Text style={styles.text}>Humidity: {"\t\t\t"+hum}</Text>
+                <Text style={styles.text}>Temperature: {"\t\t\t" + temp}</Text>
+                <Text style={styles.text}>Humidity: {"\t\t\t" + hum}</Text>
             </View>
 
 
             <View style={styles.predictionArea}>
                 <NextButton
-                    style={styles.buttonText}
-                    backgroundColor='cyan'
+                    backgroundColor='#1d802e'
+                    textColor="white"
+                    boldNumber="800"
                     title='Detect Crop'
                     onPress={apiCall} />
                 <Text style={styles.text}>{crop}</Text>
